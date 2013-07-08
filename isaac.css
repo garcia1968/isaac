@@ -1,0 +1,193 @@
+/**
+ *------
+ * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
+ * Isaac implementation : © <Your name here> <Your email address here>
+ *
+ * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
+ * See http://en.boardgamearena.com/#!doc/Studio for more information.
+ * -----
+ *
+ * isaac.css
+ *
+ * Isaac stylesheet
+ *
+ */
+
+/*
+    This is the CSS stylesheet of your game User Interface.
+    
+    Styles defined on this file will be applied to the HTML elements you define in your
+    HTML template (isaac_isaac.tpl), and to HTML elements you create dynamically
+    (in isaac.js).
+    
+    Usually, you are using CSS to:
+    
+    1°) define the overall layout of your game
+        (ex: place the board on the top left, place player's hand beside, place the deck on the right, ...).
+
+    2°) create your CSS-sprites:
+        All images of your games should be gathered into a small number of image files. Then, using
+        background-image and background-position CSS properties, you create HTML blocks that can 
+        display these images correctly (see example below).
+    
+    3°) ... anything else:
+        It is really easy to add and remove CSS classes dynamically from your Javascript with
+        dojo.addClass and dojo.removeClass. It is also easy to check if an element has a class
+        (dojo.hasClass) or to get all elements with a specific class (dojo.query). This is why,
+        very often, using CSS classes for the logic of your user interface allow you to do complex
+        thing easily.
+        
+        
+     Note: on the production platform, this file will be compressed and comments will be removed.
+           Consequently, don't hesitate to put as many comments as necessary.
+*/
+
+@import url(../../../css/csslayer.css); /* Note: you must not use any @import directive other than this one */
+
+/********* You can start writing your CSS below this line: **********/
+
+
+/*
+    Example of CSS sprites (a black token and a white token, 20x20px each, embedded in the same "tokens.png" 40x20px image):
+
+    .white_token {
+        background-image: url('img/tokens.png');
+        background-position: 0px 0px;
+    }
+    .black_token {
+        background-image: url('img/tokens.png');
+        background-position: -20px 0px;
+    }
+    .token {
+        width: 20px;
+        height: 20px;
+        background-repeat: none;
+    }
+*/
+
+#board {
+  width: 620px;
+  height: 620px; 
+  background-image: url('img/HariBoard_index.jpg');
+  background-repeat:no-repeat;
+  position: relative;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  /*background-color: red;
+  opacity: 0.2;
+  filter:alpha(opacity=20); */ /* For IE8 and earlier */      
+}
+
+.possibleMove {
+    background-color: green;
+    opacity: 0.5;
+    filter:alpha(opacity=50); /* For IE8 and earlier */  
+    cursor: pointer;  
+}
+
+.possibleScore {
+    background-color: green;
+    opacity: 0.5;
+    z-index: 810;
+    filter:alpha(opacity=50); /* For IE8 and earlier */  
+    cursor: pointer;  
+}
+
+.noMove {
+    opacity: 0.2;
+    filter:alpha(opacity=20); /* For IE8 and earlier */  
+}
+
+.token {
+  width: 53px;
+  position: absolute;
+  z-index: 800;
+  background-image: url('img/PiecesVertical3.png');
+}
+
+.token_test {
+  width: 53px;
+  position: absolute;
+  opacity: 0.5;
+  filter:alpha(opacity=50); /* For IE8 and earlier */    
+  background-image: url('img/PiecesVertical3.png');
+}
+
+.tokencolor_ffffff_1 { background-position: 0px 0px; height: 174px;   }
+.tokencolor_ffffff_2 { background-position: 0px -180px; height: 290px;  }
+.tokencolor_ffffff_3 { background-position: 0px -520px; height: 295px;  }
+.tokencolor_ffffff_4 { background-position: 0px -815px; height: 420px;  }
+.tokencolor_ffffff_5 { background-position: 0px -1287px; height: 415px;  }
+
+.tokencolor_000000_1 { background-position: 0px -1710px; height: 183px;  }
+.tokencolor_000000_2 { background-position: 0px -1895px; height: 290px;  }
+.tokencolor_000000_3 { background-position: 0px -2240px; height: 300px;  }
+.tokencolor_000000_4 { background-position: 0px -2540px; height: 420px;  }
+.tokencolor_000000_5 { background-position: 0px -2985px; height: 415px;  }
+
+.scoreMarker {
+  width: 48px;
+  position: absolute;
+  z-index: 805;
+  background-image: url('img/scoreMarker.png');  
+}
+.scorecolor_ffffff { background-position: 0px 0px; height: 65px;  }
+.scorecolor_000000 { background-position: 0px 65px; height: 65px;  }
+
+#area_pieces {
+  width: 300px;
+  /* height: 620px; */
+  /* margin-top: 640px; */
+  margin-left: 640px;
+  top: 0;
+  position: absolute;
+}
+
+.square_piece {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  font-weight:bold;
+  font-size:200%;
+  /* background-color: red;
+  opacity: 0.2;
+  filter:alpha(opacity=20);*/ /* For IE8 and earlier */      
+}
+.square_piece_select {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  font-weight:bold;
+  font-size:200%;  
+  background-color: green;
+  opacity: 0.2;
+  filter:alpha(opacity=20); /* For IE8 and earlier */      
+}
+
+/*
+.square_piece:after {
+  content: "x2";
+}
+*/
+
+.piece {
+  width: 53px;
+  position: absolute;
+  background-image: url('img/PiecesVertical3.png');
+}
+.piececolor_ffffff_1 { background-position: 0px 0px; height: 174px; }
+.piececolor_ffffff_2 { background-position: 0px -180px; height: 290px;  }
+.piececolor_ffffff_3 { background-position: 0px -520px; height: 295px;  }
+.piececolor_ffffff_4 { background-position: 0px -815px; height: 420px;  }
+.piececolor_ffffff_5 { background-position: 0px -1287px; height: 415px;  }
+
+.piececolor_000000_1 { background-position: 0px -1710px; height: 183px; }
+.piececolor_000000_2 { background-position: 0px -1895px; height: 290px;  }
+.piececolor_000000_3 { background-position: 0px -2240px; height: 300px;  }
+.piececolor_000000_4 { background-position: 0px -2540px; height: 420px;  }
+.piececolor_000000_5 { background-position: 0px -2985px; height: 415px;  }
+
