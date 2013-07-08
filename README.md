@@ -18,3 +18,5 @@ http://forum.boardgamearena.com/viewtopic.php?f=12&t=3131
 3)replace the piece orientation selection area with possibly two separate representative icons
 
 4)In it's current state, the scoring is also off by 1 point as well(1 - 100 instead of 0-99 points)
+
+5)Player move messages(right hand column) are listed twice
